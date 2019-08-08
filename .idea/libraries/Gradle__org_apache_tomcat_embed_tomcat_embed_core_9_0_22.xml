@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.22">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.22/79f39903498b28adacb18fe2ea046edd306295a6/tomcat-embed-core-9.0.22.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.22/4c1aa994668ddb3e752366ebfc70ed2da3e96917/tomcat-embed-core-9.0.22-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
