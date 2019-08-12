@@ -13,8 +13,8 @@ public class ApiTestService {
     @Autowired
     private TimeUtils timeUtils;
 
-    public static final String NOT_VALID_INPUT_HINT = "please input [0,1000]!";
-    public static final String EQUAL_MINUTE_HINT = "input equal to current minute!";
+    public static final String NOT_VALID_INPUT_HINT = "please input [0,1000]";
+    public static final String EQUAL_MINUTE_HINT = "internal error";
 
     public AddResponse getCheckNumberResult(Integer number) {
         AddResponse response = new AddResponse();
