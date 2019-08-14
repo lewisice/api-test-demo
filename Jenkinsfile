@@ -22,7 +22,8 @@ pipeline {
                 ./gradlew sonarqube \
                 -Dsonar.projectKey=xxx \
                 -Dsonar.host.url=http://<Your_IP>:9000 \
-                -Dsonar.login=b13805a2d7af84d39f79eaee10ed1da46e2df7d3
+                -Dsonar.login=admin . \
+                -Dsonar.password=admin
                 '''
             }
         }
