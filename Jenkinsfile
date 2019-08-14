@@ -16,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('Sonar Scan'){
+        stage('\u2623 Sonar Scan'){
             steps{
                 sh '''
                 ./gradlew sonarqube \
