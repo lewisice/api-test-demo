@@ -22,8 +22,6 @@ build docker image
 run docker container
 `docker run -d -p 8080:8080 spring-boot-app:latest`
 
-make a test in browser
-![browser_screenshot_1](images/browser_screenshot_1.png )
 浏览器中访问 http://localhost:8080/api/increase?number=323
 
 #### 4.Exception handle
