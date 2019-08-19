@@ -35,7 +35,8 @@ public class ApiTestService {
             response.setErrorCode(1);
             response.setData(NOT_VALID_INPUT_HINT);
         }
-        if (number.equals(timeUtils.getCurrentMinutes())) {
+        Integer num = number % 100;
+        if (num.equals(timeUtils.getCurrentMinutes())) {
             response.setErrorCode(1);
             response.setData(EQUAL_MINUTE_HINT);
         }

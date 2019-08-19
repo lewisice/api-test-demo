@@ -22,7 +22,7 @@ public class ApiTestServiceTest {
 
     public static final int RIGHT_NUMBER = 4;
     public static final int MINUTE_NUMBER = 20;
-    public static final int OUT_OF_SCOPE_NUMBER = 2000;
+    public static final int OUT_OF_SCOPE_NUMBER = 1999;
 
     @MockBean
     private TimeUtils timeUtils;
@@ -40,8 +40,9 @@ public class ApiTestServiceTest {
     @Test
     public void should_get_error_when_input_number_equal_current_minute() {
         when(timeUtils.getCurrentMinutes()).thenReturn(MINUTE_NUMBER);
-        AddResponse addResponse = apiTestService.getCheckNumberResult(MINUTE_NUMBER);
-        long num = timeUtils.getCurrentMinutes();
+        Integer num = timeUtils.getCurrentMinutes();
+        AddResponse addResponse = apiTestService.getCheckNumberResult(num);
+
         assertThat(addResponse.getData()).isEqualTo(EQUAL_MINUTE_HINT);
         assertThat(addResponse.getErrorCode()).isEqualTo(1);
     }
