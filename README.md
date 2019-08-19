@@ -26,6 +26,6 @@ run docker container
 
 #### 4.Exception handle
 - num不在0～1000，返回`{error:1, data:'please input [0,1000]'}`
-- num后两位与当前时间的分钟数一致时，返回`{error:1, data:'internal error'}`
+- num在每100个数中，必有一个错误数，返回`{error:1, data:'internal error'}`
 
 
