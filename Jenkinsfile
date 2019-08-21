@@ -9,14 +9,8 @@ pipeline {
                 sh "./gradlew clean build"
             }
         }
-        
-        stage('\u261D Api Test'){
-            steps{
-                sh 'echo "I am stage: Api Test"'
-            }
-        }
 
-        stage('\u2623 Sonar Scan'){
+        stage('\u2623 Sonar-Scan'){
             steps{
                 sh '''
                 ./gradlew sonarqube \
@@ -41,11 +35,17 @@ pipeline {
             }
         } 
 
-        stage('\u26F1  Deploy') {
+        stage('\u26F1 Deploy') {
             steps{
                 sh 'echo "-----Deploy stage-----"'
                 sh "docker run -d --name api-container -p 8888:8080 api-demo:v${env.BUILD_NUMBER}"
             }
-        }         
+        } 
+        
+        stage('\u261D Api Test'){
+            steps{
+                sh 'echo "I am stage: Api Test"'
+            }
+        }
     }   
 }
