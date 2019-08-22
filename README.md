@@ -18,10 +18,12 @@ API接口为`http://localhost:8080/api/increase?number=323`，返回num+1(0<num<
 - docker run
 
 build docker image
+
 `docker build -t api-demo:0.1 .`
 
 run docker container
-`docker run -d -p 8080:8080 spring-boot-app:latest`
+
+`docker run -d -p 8080:8080 api-demo:0.1 `
 
 浏览器中访问 http://localhost:8080/api/increase?number=323
 
