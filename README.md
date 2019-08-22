@@ -27,6 +27,18 @@ run docker container
 
 浏览器中访问 http://localhost:8080/api/increase?number=323
 
+
+#### 4. Sonar Scan
+>before run below command ,please set up sonarqube
+
+```bash
+./gradlew sonarqube \
+    -Dsonar.projectKey=xxx \
+    -Dsonar.host.url=http://localhost:9000 \
+    -Dsonar.login=admin \
+    -Dsonar.password=admin
+```
+
 #### 4.Exception handle
 - num不在0～1000，返回`{'errorCode':1, 'data':'please input [0,1000]'}`
 - num在每100个数中，必有一个错误数，返回`{'errorCode':1, 'data':'internal error'}`
