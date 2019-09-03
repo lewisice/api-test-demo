@@ -36,6 +36,12 @@ pipeline {
         } 
 
         stage('\u26F1 Deploy') {
+            options {
+              timeout(time: 300, unit: 'SECONDS') 
+            }
+            input {
+              message "Should we continue?"
+            }
             steps{
                 sh 'echo "-----Deploy stage-----"'
                 sh "docker run -d --name api-container -p 8888:8080 api-demo:v${env.BUILD_NUMBER}"
