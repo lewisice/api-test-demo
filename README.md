@@ -1,7 +1,6 @@
 ---
 description: >-
-  A demo Jave project with tool gradle,for our CICD
-  
+  A demo Jave project with tool gradle,for our CICD.
   Hope you gays can understand the process of CICD.
 ---
 
