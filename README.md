@@ -1,11 +1,14 @@
+---
+description: >-
+  A demo Jave project with tool gradle,for our CICD
+  
+  Hope you gays can understand the process of CICD.
+---
+
+
 ### API-TEST-DEMO
 >Java project
 
----
-description: >-
-  A demo Jave project with tool gradle,for our **CICD**
-  Hope you gays can understand the process of CICD.
----
 
 
 #### 1.junit test
