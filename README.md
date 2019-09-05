@@ -1,6 +1,13 @@
 ### API-TEST-DEMO
 >Java project
 
+---
+description: >-
+  A demo Jave project with tool gradle,for our **CICD**
+  Hope you gays can understand the process of CICD.
+---
+
+
 #### 1.junit test
 包含JUnit单元测试，通过`./gradlew clean build`运行测试
 测试报告：`http://localhost:63343/api-test-demo/build/reports/tests/test/index.html`
