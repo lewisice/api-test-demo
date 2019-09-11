@@ -12,13 +12,8 @@ pipeline {
 
         stage('\u2623 Sonar-Scan'){
             steps{
-                sh '''
-                ./gradlew sonarqube \
-                -Dsonar.projectKey=xxx \
-                -Dsonar.host.url=http://<Your_IP>:9000 \
-                -Dsonar.login=admin . \
-                -Dsonar.password=admin
-                '''
+                sh "sleep 10"
+                sh "echo -----Sonar Scan **** -----"
             }
         }
 
@@ -39,11 +34,13 @@ pipeline {
             parallel {
                 stage('dev') {
                     steps{
+                        sh "sleep 10"
                         sh "echo -----deploy **dev** env -----"
                     }
                 }
                 stage('qa') {
                     steps{
+                        sh "sleep 5"
                         sh "echo -----deploy **qa** env-----"
                     }     
                 }
