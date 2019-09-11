@@ -30,7 +30,7 @@ pipeline {
 
         stage('\u270D Build image') {
             steps{
-                sh "echo "I am stage: Build image""
+                sh "echo build image ...."
                 sh "docker build -t api-demo:v${env.BUILD_NUMBER} ."
             }
         } 
@@ -39,12 +39,12 @@ pipeline {
             parallel {
                 stage('dev') {
                     steps{
-                        sh "echo "-----deploy **dev** env -----""
+                        sh "echo -----deploy **dev** env -----"
                     }
                 }
                 stage('qa') {
                     steps{
-                        sh "echo "-----deploy **qa** env-----""
+                        sh "echo -----deploy **qa** env-----"
                     }     
                 }
             }
@@ -52,7 +52,7 @@ pipeline {
         
         stage('\u261D Api Test'){
             steps{
-                sh "echo "I am stage: Api Test""
+                sh "echo I am stage: Api Test"
             }
         }
     }   
