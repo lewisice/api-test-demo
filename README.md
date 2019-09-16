@@ -11,10 +11,10 @@ description: >-
 
 
 #### 1.junit test
-包含JUnit单元测试，通过`./gradlew clean build`运行测试
+包含JUnit单元测试，运行`./gradlew clean build`
 
 #### 2.build package
-生成jar包，方便CI/CD及docker，通过`./gradlew -x jar build`运行测试
+生成jar包，方便CI/CD及docker，运行`./gradlew -x jar build`
 
 #### 3. Run
 
