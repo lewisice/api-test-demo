@@ -10,17 +10,18 @@ pipeline {
             }
         }
 
-        // stage('\u2623 Sonar-Scan'){
-        //     steps{
-        //         sh '''
-        //         ./gradlew sonarqube \
-        //         -Dsonar.projectKey=xxx \
-        //         -Dsonar.host.url=http://<Your_IP>:9000 \
-        //         -Dsonar.login=admin  \
-        //         -Dsonar.password=admin
-        //         '''
-        //     }
-        // }
+        stage('\u2623 Sonar-Scan'){
+            steps{
+                sh '''
+                BRIDGES_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
+                ./gradlew sonarqube \
+                -Dsonar.projectKey=xxx \
+                -Dsonar.host.url=http://${BRIDGES_IP}:9000 \
+                -Dsonar.login=admin  \
+                -Dsonar.password=admin
+                '''
+            }
+        }
 
         stage('\u270A Build jar'){
             steps{
