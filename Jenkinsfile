@@ -45,7 +45,6 @@ pipeline {
             steps{
                 sh 'echo "-----Deploy stage-----"'
                 sh 'docker ps -f name=api-container -q  | xargs --no-run-if-empty docker rm -f'
-                // sh './check.sh'
                 sh "docker run -d --name api-container -p 8888:8080 api-demo:v${env.BUILD_NUMBER}"
             }
         } 
