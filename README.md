@@ -12,7 +12,6 @@ description: >-
 
 #### 1.junit test
 包含JUnit单元测试，通过`./gradlew clean build`运行测试
-测试报告：`http://localhost:63343/api-test-demo/build/reports/tests/test/index.html`
 
 #### 2.build package
 生成jar包，方便CI/CD及docker，通过`./gradlew -x jar build`运行测试
