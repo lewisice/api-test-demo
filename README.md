@@ -22,7 +22,10 @@ description: >-
 - local run
 
 启动项目，通过`./gradlew bootRun`
-API接口为`http://localhost:8080/api/increase?number=323`，返回num+1(0<num<1000),形式如`{'errorCode':0, 'data':'324'}`
+
+API接口为`http://localhost:8080/api/increase?number=323`
+
+返回num+1(0<num<1000),形式如`{'errorCode':0, 'data':'324'}`
 
 - docker run
 
