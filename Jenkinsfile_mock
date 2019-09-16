@@ -45,6 +45,23 @@ pipeline {
             }
         } 
         
+        stage('Deploy Two Env'){
+            parallel {
+                stage('qa') {
+                    steps{
+                        sh "sleep 10"
+                        sh "echo -----deploy **qa** env -----"
+                    }
+                }
+                stage('uat') {
+                    steps{
+                        sh "sleep 5"
+                        sh "echo -----deploy **uat** env-----"
+                    }     
+                }
+            }
+        }
+
         stage('\u261D Api Test'){
             steps{
                 sh 'echo "I am stage: Api Test"'
