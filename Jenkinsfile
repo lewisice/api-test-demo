@@ -16,7 +16,7 @@ pipeline {
                 ./gradlew sonarqube \
                 -Dsonar.projectKey=xxx \
                 -Dsonar.host.url=http://<Your_IP>:9000 \
-                -Dsonar.login=admin . \
+                -Dsonar.login=admin  \
                 -Dsonar.password=admin
                 '''
             }
