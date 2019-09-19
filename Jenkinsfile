@@ -31,7 +31,6 @@ pipeline {
 
         stage('\u270D Build image') {
             steps{
-                sh 'echo "I am stage: Build image"'
                 sh "docker build -t api-demo:v${env.BUILD_NUMBER} ."
             }
         } 
@@ -44,7 +43,6 @@ pipeline {
               message "Should we continue?"
             }
             steps{
-                sh 'echo "-----Deploy stage-----"'
                 sh 'docker ps -f name=api-container -q  | xargs --no-run-if-empty docker rm -f'
                 sh "docker run -d --name api-container -p 8080:8080 api-demo:v${env.BUILD_NUMBER}"
             }
@@ -52,7 +50,7 @@ pipeline {
         
         stage('\u261D Api Test'){
             steps{
-                sh 'echo "I am stage: Api Test"'
+                sh '/opt/apache-jmeter-5.1.1/bin/jmeter.sh -n -t api-test/api-test-demo.jmx'
             }
         }
     }   
