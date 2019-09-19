@@ -39,7 +39,7 @@
             </collectionProp>
           </elementProp>
           <stringProp name="HTTPSampler.domain">172.17.0.1</stringProp>
-          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.port">8082</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/api/increase</stringProp>
