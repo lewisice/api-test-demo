@@ -50,8 +50,13 @@ run docker container
     -Dsonar.password=admin
 ```
 
+#### 5. api test with jmeter
+
+需要提前安装好jmeter
+
+`/opt/apache-jmeter-5.1.1/bin/jmeter.sh  -n -t api-test/api-test-demo.jmx`
+
+
 #### 4.Exception handle
 - num不在0～1000，返回`{'errorCode':1, 'data':'please input [0,1000]'}`
 - num在每100个数中，必有一个错误数，返回`{'errorCode':1, 'data':'internal error'}`
-
-
