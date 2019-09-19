@@ -42,11 +42,12 @@ pipeline {
             }
         } 
         
-        stage('\u261D Api Test'){
-            steps{
-                sh 'sleep 30'
-                sh '/opt/apache-jmeter-5.1.1/bin/jmeter.sh -n -t api-test/api-test-demo.jmx'
-            }
-        }
+       // stage('\u261D Api Test'){
+       //     steps{
+       //         sh 'sleep 30'
+       //         // build job: 'Jmeter-test'
+       //         sh '/opt/apache-jmeter-5.1.1/bin/jmeter.sh -n -t api-test/api-test-demo.jmx'
+       //     }
+       // }
     }   
 }
