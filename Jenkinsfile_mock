@@ -3,14 +3,14 @@ pipeline {
     agent any 
 
     stages {
-        stage('\u26F9 Unit Test'){
+        stage('Unit Test'){
             steps{
                 sh "echo  I am stage: Unit Test"
                 sh "sleep 10"
             }
         }
 
-        stage('\u2623 Sonar-Scan'){
+        stage('Sonar-Scan'){
             steps{
                 sh '''
                     sleep 10
@@ -19,27 +19,21 @@ pipeline {
             }
         }
 
-        stage('\u270A Build jar'){
+        stage('Build jar'){
             steps{
                 sh "echo  I am stage: xxx"
                 sh "sleep 10"
             }
         }
 
-        stage('\u270D Build image') {
+        stage('Build image') {
             steps{
                 sh 'echo "I am stage: Build image"'
-                sh "sleep 60"
+                sh "sleep 30"
             }
         } 
 
-        stage('\u26F1 Deploy') {
-            options {
-              timeout(time: 300, unit: 'SECONDS') 
-            }
-            input {
-              message "Should we continue?"
-            }
+        stage('Deploy') {
             steps{
                 sh 'echo "-----Deploy stage-----"'
             }

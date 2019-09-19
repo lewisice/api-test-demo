@@ -3,14 +3,14 @@ pipeline {
     agent any 
 
     stages {
-        stage('\u26F9 Unit Test'){
+        stage('Unit Test'){
             steps{
                 sh "echo  I am stage: Unit Test"
                 sh "./gradlew clean build"
             }
         }
 
-        stage('\u2623 Sonar-Scan'){
+        stage('Sonar-Scan'){
             steps{
                 sh '''
                 BRIDGES_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
@@ -23,7 +23,7 @@ pipeline {
             }
         }
 
-        stage('\u270A Build jar'){
+        stage('Build jar'){
             steps{
                 sh "./gradlew -x jar build"
             }
@@ -36,12 +36,6 @@ pipeline {
         } 
 
         stage('\u26F1 Deploy') {
-            options {
-              timeout(time: 300, unit: 'SECONDS') 
-            }
-            input {
-              message "Should we continue?"
-            }
             steps{
                 sh 'docker ps -f name=api-container -q  | xargs --no-run-if-empty docker rm -f'
                 sh "docker run -d --name api-container -p 8080:8080 api-demo:v${env.BUILD_NUMBER}"
