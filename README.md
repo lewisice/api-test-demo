@@ -11,18 +11,20 @@ description: >-
 
 
 #### 1.junit test
-包含JUnit单元测试，通过`./gradlew clean build`运行测试
-测试报告：`http://localhost:63343/api-test-demo/build/reports/tests/test/index.html`
+包含JUnit单元测试，运行`./gradlew clean build`
 
 #### 2.build package
-生成jar包，方便CI/CD及docker，通过`./gradlew -x jar build`运行测试
+生成jar包，方便CI/CD及docker，运行`./gradlew -x jar build`
 
 #### 3. Run
 
 - local run
 
 启动项目，通过`./gradlew bootRun`
-API接口为`http://localhost:8080/api/increase?number=323`，返回num+1(0<num<1000),形式如`{'errorCode':0, 'data':'324'}`
+
+API接口为`http://localhost:8080/api/increase?number=323`
+
+返回num+1(0<num<1000),形式如`{'errorCode':0, 'data':'324'}`
 
 - docker run
 
@@ -48,8 +50,13 @@ run docker container
     -Dsonar.password=admin
 ```
 
+#### 5. api test with jmeter
+
+需要提前安装好jmeter
+
+`/opt/apache-jmeter-5.1.1/bin/jmeter.sh  -n -t api-test/api-test-demo.jmx`
+
+
 #### 4.Exception handle
 - num不在0～1000，返回`{'errorCode':1, 'data':'please input [0,1000]'}`
 - num在每100个数中，必有一个错误数，返回`{'errorCode':1, 'data':'internal error'}`
-
-
